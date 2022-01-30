@@ -1,57 +1,60 @@
-from bs4 import BeautifulSoup
-import requests
-import re
-import urllib2
 import os
-import cookielib
-import json
+import requests
+from bs4 import BeautifulSoup
 
-def get_soup(url,header):
-    return BeautifulSoup(urllib2.urlopen(urllib2.Request(url,headers=header)),'html.parser')
+google_image = "https://www.google.com/search?site=&tbm=isch&source=hp&biw=1873&bih=990&"
 
-
-query = raw_input("query image")# you can change the query for the image  here
-image_type="ActiOn"
-query= query.split()
-query='+'.join(query)
-url="https://www.google.co.in/search?q="+query+"&source=lnms&tbm=isch"
-print url
-#add the directory for your image here
-DIR="Pictures"
-header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
+user_agent = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
 }
-soup = get_soup(url,header)
+saved_folder = 'images'
 
 
-ActualImages=[]# contains the link for Large original images, type of  image
-for a in soup.find_all("div",{"class":"rg_meta"}):
-    link , Type =json.loads(a.text)["ou"]  ,json.loads(a.text)["ity"]
-    ActualImages.append((link,Type))
-
-print  "there are total" , len(ActualImages),"images"
-
-if not os.path.exists(DIR):
-            os.mkdir(DIR)
-DIR = os.path.join(DIR, query.split()[0])
-
-if not os.path.exists(DIR):
-            os.mkdir(DIR)
-###print images
-for i , (img , Type) in enumerate( ActualImages):
-    try:
-        req = urllib2.Request(img, headers={'User-Agent' : header})
-        raw_img = urllib2.urlopen(req).read()
-
-        cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
-        print cntr
-        if len(Type)==0:
-            f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+".jpg"), 'wb')
-        else :
-            f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+"."+Type), 'wb')
+def main():
+    if not os.path.exists(saved_folder):
+        os.mkdir(saved_folder)
+    download_images()
 
 
-        f.write(raw_img)
-        f.close()
-    except Exception as e:
-        print "could not load : "+img
-        print e
+def download_images():
+    data = input('What are you looking for? ')
+    n_images = int(input('How many images do you want? '))
+
+    print('searching...')
+
+    search_url = google_image + 'q=' + data
+
+    response = requests.get(search_url, headers=user_agent)
+
+    html = response.text
+
+    soup = BeautifulSoup(html, 'html.parser')
+
+    results = soup.findAll('img', {'class': 'rg_i Q4LuWd'})
+
+    count = 1
+    links = []
+    for result in results:
+        try:
+            link = result['data-src']
+            links.append(link)
+            count += 1
+            if(count > n_images):
+                break
+
+        except KeyError:
+            continue
+
+    print(f"Downloading {len(links)} images...")
+
+    for i, link in enumerate(links):
+        response = requests.get(link)
+
+        image_name = saved_folder + '/' + data + str(i+1) + '.jpg'
+
+        with open(image_name, 'wb') as fh:
+            fh.write(response.content)
+
+
+if __name__ == "__main__":
+    main()
