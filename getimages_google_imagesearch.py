@@ -11,6 +11,9 @@ user_agent = {
 }
 
 def main():
+    """
+
+    """
 
     totals = 0
     iterations = 0 # counts so that we keep the engine from smoking
@@ -46,6 +49,17 @@ def main():
         '''
 
 def download_wiki_images(this_year,saved_folder,iterations):
+    """
+
+
+    Args:
+        this_year ([type]): [description]
+        saved_folder ([type]): [description]
+        iterations ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
 
     aspect_one = this_year
 
@@ -89,6 +103,21 @@ def download_wiki_images(this_year,saved_folder,iterations):
     return iterations
 
 def download_images(data,this_year,n_images,iterations,saved_folder,aspect_two,aspect_three,totals):
+    """download images from googles image repository and store them in folders by the year specified.
+
+    Args:
+        data ([type]): [description]
+        this_year ([type]): [description]
+        n_images ([type]): [description]
+        iterations ([type]): [description]
+        saved_folder ([type]): [description]
+        aspect_two ([type]): [description]
+        aspect_three ([type]): [description]
+        totals ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     aspect_one = this_year
     apsect_one = int(aspect_one)
     if aspect_three != "":
@@ -214,4 +243,6 @@ https://www.loc.gov/item/98515962/
 
 
 if __name__ == "__main__":
+        """[summary]
+        """
     main()
