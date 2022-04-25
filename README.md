@@ -1,2 +1,2 @@
-# HowItsChanged_ML
- A machine learning approach to evolving visual content using computer vision, VQGAN, and CLIP
+# HowItsChanged
+Using requests and google images to illustrate how a query has visually changed over the years. 
