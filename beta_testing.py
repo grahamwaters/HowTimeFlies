@@ -1,5 +1,5 @@
-#https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=#
-#https://www.thepythoncode.com/article/extracting-image-metadata-in-python
+# https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=#
+# https://www.thepythoncode.com/article/extracting-image-metadata-in-python
 import bs4
 from bs4 import *
 from bs4 import BeautifulSoup as soup
@@ -10,19 +10,20 @@ import os
 import time
 import icecream
 from icecream import ic
+
 # CREATE FOLDER
-def folder_create(images,folder_name):
+def folder_create(images, folder_name):
     try:
         folder_name = str(folder_name)
         # folder creation
         try:
             os.mkdir(folder_name)
-        except Exception as e: # if there are problems then save with a 2 on it.
+        except Exception as e:  # if there are problems then save with a 2 on it.
             os.mkdir(folder_name + "2")
     # if folder exists with that name, ask another name
     except:
         print("Folder Exist with that name!")
-        #folder_create(images) #! this recursion may not be necessary
+        # folder_create(images) #! this recursion may not be necessary
 
     # image downloading start
     download_images(images)
@@ -42,10 +43,10 @@ def download_images(images):
         for i, image in enumerate(images):
             # From image tag ,Fetch image Source URL
 
-                        # 1.data-srcset
-                        # 2.data-src
-                        # 3.data-fallback-src
-                        # 4.src
+            # 1.data-srcset
+            # 2.data-src
+            # 3.data-fallback-src
+            # 4.src
 
             # Here we will use exception handling
 
@@ -88,7 +89,7 @@ def download_images(images):
                 try:
 
                     # possibility of decode
-                    r = str(r, 'utf-8')
+                    r = str(r, "utf-8")
 
                 except UnicodeDecodeError:
 
@@ -111,29 +112,30 @@ def download_images(images):
         else:
             print(f"Total {count} Images Downloaded Out of {len(images)}")
 
+
 # MAIN FUNCTION START
 def main():
 
     # go to the link and we will iterate multiple times with this same url...
-    pages_total = 644664//36
-    for page_num in tqdm(range(1,pages_total)):
-        url = f'https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=&page={page_num}'
+    pages_total = 644664 // 36
+    for page_num in tqdm(range(1, pages_total)):
+        url = f"https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=&page={page_num}"
         ic(url)
         # content of URL
         r = requests.get(url)
 
         # Parse HTML Code
-        soup = BeautifulSoup(r.text, 'html.parser')
+        soup = BeautifulSoup(r.text, "html.parser")
 
         # find all images in URL
-        images = soup.findAll('view-details-link')
+        images = soup.findAll("view-details-link")
 
         download_images(images)
 
         # Call folder create function
-        folder_create(images,str(page_num))
+        folder_create(images, str(page_num))
         time.sleep(1)
-        print(f'completed epoch {page_num}')
+        print(f"completed epoch {page_num}")
 
 
 # CALL MAIN FUNCTION

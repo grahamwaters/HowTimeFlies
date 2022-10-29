@@ -1,0 +1,238 @@
+[
+    {
+        "label": "bs4",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "bs4",
+        "description": "bs4",
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "icecream",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "icecream",
+        "description": "icecream",
+        "detail": "icecream",
+        "documentation": {}
+    },
+    {
+        "label": "ic",
+        "importPath": "icecream",
+        "description": "icecream",
+        "isExtraImport": true,
+        "detail": "icecream",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "google_images_download",
+        "importPath": "google_images_download",
+        "description": "google_images_download",
+        "isExtraImport": true,
+        "detail": "google_images_download",
+        "documentation": {}
+    },
+    {
+        "label": "folder_create",
+        "kind": 2,
+        "importPath": "beta_testing",
+        "description": "beta_testing",
+        "peekOfCode": "def folder_create(images, folder_name):\n    try:\n        folder_name = str(folder_name)\n        # folder creation\n        try:\n            os.mkdir(folder_name)\n        except Exception as e:  # if there are problems then save with a 2 on it.\n            os.mkdir(folder_name + \"2\")\n    # if folder exists with that name, ask another name\n    except:",
+        "detail": "beta_testing",
+        "documentation": {}
+    },
+    {
+        "label": "download_images",
+        "kind": 2,
+        "importPath": "beta_testing",
+        "description": "beta_testing",
+        "peekOfCode": "def download_images(images):\n    # initial count is zero\n    count = 0\n    # print total images found in URL\n    print(f\"Total {len(images)} Image Found!\")\n    # checking if images is not zero\n    if len(images) != 0:\n        for i, image in enumerate(images):\n            # From image tag ,Fetch image Source URL\n            # 1.data-srcset",
+        "detail": "beta_testing",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "beta_testing",
+        "description": "beta_testing",
+        "peekOfCode": "def main():\n    # go to the link and we will iterate multiple times with this same url...\n    pages_total = 644664 // 36\n    for page_num in tqdm(range(1, pages_total)):\n        url = f\"https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=&page={page_num}\"\n        ic(url)\n        # content of URL\n        r = requests.get(url)\n        # Parse HTML Code\n        soup = BeautifulSoup(r.text, \"html.parser\")",
+        "detail": "beta_testing",
+        "documentation": {}
+    },
+    {
+        "label": "get_pictures",
+        "kind": 2,
+        "importPath": "get_generic_images",
+        "description": "get_generic_images",
+        "peekOfCode": "def get_pictures(url, filename):\n    ## Set up the image URL and filename\n    image_url = (\n        \"https://cdn.pixabay.com/photo/2020/02/06/09/39/summer-4823612_960_720.jpg\"\n    )\n    filename = image_url.split(\"/\")[-1]\n    # Open the url image, set stream to True, this will return the stream content.\n    r = requests.get(image_url, stream=True)\n    # Check if the image was retrieved successfully\n    if r.status_code == 200:",
+        "detail": "get_generic_images",
+        "documentation": {}
+    },
+    {
+        "label": "downloadimages",
+        "kind": 2,
+        "importPath": "get_google",
+        "description": "get_google",
+        "peekOfCode": "def downloadimages(query):\n    # keywords is the search query\n    # format is the image file format\n    # limit is the number of images to be downloaded\n    # print urs is to print the image file url\n    # size is the image size which can\n    # be specified manually (\"large, medium, icon\")\n    # aspect ratio denotes the height width ratio\n    # of images to download. (\"tall, square, wide, panoramic\")\n    arguments = {",
+        "detail": "get_google",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "get_google",
+        "description": "get_google",
+        "peekOfCode": "response = google_images_download.googleimagesdownload()\nsearch_queries = [\n    \"The smartphone also features an in display fingerprint sensor.\",\n    \"The pop up selfie camera is placed aligning with the rear cameras.\",\n    \"\"\"In terms of storage Vivo V15 Pro could offer\n   up to 6GB of RAM and 128GB of onboard storage.\"\"\",\n    \"The smartphone could be fuelled by a 3 700mAh battery.\",\n]\ndef downloadimages(query):\n    # keywords is the search query",
+        "detail": "get_google",
+        "documentation": {}
+    },
+    {
+        "label": "search_queries",
+        "kind": 5,
+        "importPath": "get_google",
+        "description": "get_google",
+        "peekOfCode": "search_queries = [\n    \"The smartphone also features an in display fingerprint sensor.\",\n    \"The pop up selfie camera is placed aligning with the rear cameras.\",\n    \"\"\"In terms of storage Vivo V15 Pro could offer\n   up to 6GB of RAM and 128GB of onboard storage.\"\"\",\n    \"The smartphone could be fuelled by a 3 700mAh battery.\",\n]\ndef downloadimages(query):\n    # keywords is the search query\n    # format is the image file format",
+        "detail": "get_google",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "getimages_google_imagesearch",
+        "description": "getimages_google_imagesearch",
+        "peekOfCode": "def main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")\n    # folder_subname = input('name for your subfolder:')\n    from_year = int(input(\"from what year at the earliest? \"))\n    to_year = int(input(\"to what year at the latest? \"))\n    n_images = int(input(\"How many images do you want? (80 is limit per page) \"))\n    aspect_two = input(\"what MUST be included in the search?\")\n    aspect_three = input(\"what would you like to leave out of the search? \")",
+        "detail": "getimages_google_imagesearch",
+        "documentation": {}
+    },
+    {
+        "label": "download_wiki_images",
+        "kind": 2,
+        "importPath": "getimages_google_imagesearch",
+        "description": "getimages_google_imagesearch",
+        "peekOfCode": "def download_wiki_images(this_year, saved_folder, iterations):\n    aspect_one = this_year\n    iterations = iterations + 1\n    if iterations % 20 == 0:\n        time.sleep(15)\n    wikipedia_image = (\n        f\"https://commons.wikimedia.org/wiki/Category:{str(this_year)}_photographs\"\n    )\n    print(\"\\n\", wikipedia_image)\n    response = requests.get(wikipedia_image, headers=user_agent)",
+        "detail": "getimages_google_imagesearch",
+        "documentation": {}
+    },
+    {
+        "label": "download_images",
+        "kind": 2,
+        "importPath": "getimages_google_imagesearch",
+        "description": "getimages_google_imagesearch",
+        "peekOfCode": "def download_images(\n    data,\n    this_year,\n    n_images,\n    iterations,\n    saved_folder,\n    aspect_two,\n    aspect_three,\n    totals,\n):",
+        "detail": "getimages_google_imagesearch",
+        "documentation": {}
+    },
+    {
+        "label": "google_image",
+        "kind": 5,
+        "importPath": "getimages_google_imagesearch",
+        "description": "getimages_google_imagesearch",
+        "peekOfCode": "google_image = (\n    \"https://www.google.com/search?site=&tbm=isch&source=hp&biw=1873&bih=990&\"\n)\nwikipedia_image = \"\"\nuser_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking",
+        "detail": "getimages_google_imagesearch",
+        "documentation": {}
+    },
+    {
+        "label": "wikipedia_image",
+        "kind": 5,
+        "importPath": "getimages_google_imagesearch",
+        "description": "getimages_google_imagesearch",
+        "peekOfCode": "wikipedia_image = \"\"\nuser_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")\n    # folder_subname = input('name for your subfolder:')\n    from_year = int(input(\"from what year at the earliest? \"))",
+        "detail": "getimages_google_imagesearch",
+        "documentation": {}
+    },
+    {
+        "label": "user_agent",
+        "kind": 5,
+        "importPath": "getimages_google_imagesearch",
+        "description": "getimages_google_imagesearch",
+        "peekOfCode": "user_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")\n    # folder_subname = input('name for your subfolder:')\n    from_year = int(input(\"from what year at the earliest? \"))\n    to_year = int(input(\"to what year at the latest? \"))",
+        "detail": "getimages_google_imagesearch",
+        "documentation": {}
+    }
+]
