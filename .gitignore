@@ -5,7 +5,6 @@ wiki_images_resources/index.ts
 wiki_images_resources/wiki_images.scss
 wiki_images_resources/Wiki_imagesContainer.tsx
 wiki_images_resources/Wiki_imagesView.tsx
-*.jpg
 images
 /images
 images/
