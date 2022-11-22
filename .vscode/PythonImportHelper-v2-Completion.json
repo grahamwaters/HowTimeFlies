@@ -123,7 +123,7 @@
         "kind": 2,
         "importPath": "scripts.01_getimages_google_imagesearch",
         "description": "scripts.01_getimages_google_imagesearch",
-        "peekOfCode": "def main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")\n    # folder_subname = input('name for your subfolder:')\n    from_year = int(input(\"from what year at the earliest? \"))\n    to_year = int(input(\"to what year at the latest? \"))\n    n_images = int(input(\"How many images do you want? (80 is limit per page) \"))\n    aspect_two = input(\"what MUST be included in the search?\")\n    aspect_three = input(\"what would you like to leave out of the search? \")",
+        "peekOfCode": "def main():\n    \"\"\"\n    main function to run the script\n    \"\"\"\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")\n    # folder_subname = input('name for your subfolder:')\n    from_year = int(input(\"from what year at the earliest? \"))\n    to_year = int(input(\"to what year at the latest? \"))",
         "detail": "scripts.01_getimages_google_imagesearch",
         "documentation": {}
     },
@@ -132,7 +132,7 @@
         "kind": 2,
         "importPath": "scripts.01_getimages_google_imagesearch",
         "description": "scripts.01_getimages_google_imagesearch",
-        "peekOfCode": "def download_wiki_images(this_year, saved_folder, iterations):\n    aspect_one = this_year\n    iterations = iterations + 1\n    if iterations % 20 == 0:\n        time.sleep(15)\n    wikipedia_image = (\n        f\"https://commons.wikimedia.org/wiki/Category:{str(this_year)}_photographs\"\n    )\n    print(\"\\n\", wikipedia_image)\n    response = requests.get(wikipedia_image, headers=user_agent)",
+        "peekOfCode": "def download_wiki_images(this_year, saved_folder, iterations, n_images):\n    \"\"\"\n    download_wiki_images\n    Parameters\n    :param this_year: year to search for\n    :type this_year: int\n    :param saved_folder: folder to save images to\n    :type saved_folder: str\n    :param iterations: number of iterations to keep track of\n    :type iterations: int",
         "detail": "scripts.01_getimages_google_imagesearch",
         "documentation": {}
     },
@@ -150,7 +150,7 @@
         "kind": 5,
         "importPath": "scripts.01_getimages_google_imagesearch",
         "description": "scripts.01_getimages_google_imagesearch",
-        "peekOfCode": "google_image = (\n    \"https://www.google.com/search?site=&tbm=isch&source=hp&biw=1873&bih=990&\"\n)\nwikipedia_image = \"\"\nuser_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking",
+        "peekOfCode": "google_image = (\n    \"https://www.google.com/search?site=&tbm=isch&source=hp&biw=1873&bih=990&\"\n)\nwikipedia_image = \"\"\nuser_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    \"\"\"\n    main function to run the script",
         "detail": "scripts.01_getimages_google_imagesearch",
         "documentation": {}
     },
@@ -159,7 +159,7 @@
         "kind": 5,
         "importPath": "scripts.01_getimages_google_imagesearch",
         "description": "scripts.01_getimages_google_imagesearch",
-        "peekOfCode": "wikipedia_image = \"\"\nuser_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")\n    # folder_subname = input('name for your subfolder:')\n    from_year = int(input(\"from what year at the earliest? \"))",
+        "peekOfCode": "wikipedia_image = \"\"\nuser_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    \"\"\"\n    main function to run the script\n    \"\"\"\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking",
         "detail": "scripts.01_getimages_google_imagesearch",
         "documentation": {}
     },
@@ -168,7 +168,7 @@
         "kind": 5,
         "importPath": "scripts.01_getimages_google_imagesearch",
         "description": "scripts.01_getimages_google_imagesearch",
-        "peekOfCode": "user_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")\n    # folder_subname = input('name for your subfolder:')\n    from_year = int(input(\"from what year at the earliest? \"))\n    to_year = int(input(\"to what year at the latest? \"))",
+        "peekOfCode": "user_agent = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36\"\n}\ndef main():\n    \"\"\"\n    main function to run the script\n    \"\"\"\n    totals = 0\n    iterations = 0  # counts so that we keep the engine from smoking\n    data = input(\"What are you looking for? \")",
         "detail": "scripts.01_getimages_google_imagesearch",
         "documentation": {}
     },

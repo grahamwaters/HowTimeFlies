@@ -15,7 +15,9 @@ user_agent = {
 
 
 def main():
-
+    """
+    main function to run the script
+    """
     totals = 0
     iterations = 0  # counts so that we keep the engine from smoking
     data = input("What are you looking for? ")
@@ -40,7 +42,7 @@ def main():
     for this_year in tqdm(range(int(from_year), int(to_year))):
         # update folder info
         print("google extraction for the year...")
-        saved_folder = f"images/{this_year}"
+        saved_folder = f"../images/{this_year}"
         if not os.path.exists(saved_folder):
             os.mkdir(saved_folder)
         iterations, totals = download_images(
@@ -53,23 +55,26 @@ def main():
             aspect_three,
             totals,
         )
-
-        # wiki
-        """
-        print("wikipedia extraction for the year...")
-        saved_folder = f'Wiki_images/{this_year}'
-        if not os.path.exists(saved_folder):
-            os.mkdir(saved_folder)
-        try:
-            iterations = download_wiki_images(this_year,saved_folder,iterations)
-        except Exception as e:
-            print("error with wikipedia data pull")
-            print(e)
-        """
+        # wikipedia extraction for the year as well
 
 
-def download_wiki_images(this_year, saved_folder, iterations):
+def download_wiki_images(this_year, saved_folder, iterations, n_images):
+    """
+    download_wiki_images
 
+    Parameters
+
+    :param this_year: year to search for
+    :type this_year: int
+    :param saved_folder: folder to save images to
+    :type saved_folder: str
+    :param iterations: number of iterations to keep track of
+    :type iterations: int
+    :return: iterations
+    :rtype: int
+    :param n_images: number of images to download
+    :type n_images: int
+    """
     aspect_one = this_year
 
     iterations = iterations + 1
@@ -124,6 +129,30 @@ def download_images(
     aspect_three,
     totals,
 ):
+    """
+    download_images searches google for images of the data string and saves them to the saved_folder
+
+    Parameters
+
+    :param data: string of what you are looking for
+    :type data: str
+    :param this_year: year to search for
+    :type this_year: int
+    :param n_images: number of images to download
+    :type n_images: int
+    :param iterations: number of iterations to keep track of
+    :type iterations: int
+    :param saved_folder: folder to save images to
+    :type saved_folder: str
+    :param aspect_two: string to include in search
+    :type aspect_two: str
+    :param aspect_three: string to exclude from search
+    :type aspect_three: str
+    :param totals: total number of images downloaded
+    :type totals: int
+    :return: iterations, totals
+    :rtype: int, int
+    """
     aspect_one = this_year
     apsect_one = int(aspect_one)
     if aspect_three != "":
@@ -188,80 +217,6 @@ def download_images(
             fh.write(response.content)
     print(f"Running total of collected images:{totals}")
     return iterations, totals
-
-
-"""
-https://www.loc.gov/item/90707101/
-https://www.loc.gov/item/90715981/
-https://www.loc.gov/item/93510427/
-https://www.loc.gov/item/98508522/
-https://www.loc.gov/item/98508572/
-https://www.loc.gov/item/98508588/
-https://www.loc.gov/item/98508610/
-https://www.loc.gov/item/98508631/
-https://www.loc.gov/item/98508851/
-
-
-
-# general
-
-
-https://www.loc.gov/item/90707101/
-https://www.loc.gov/item/90715977/
-https://www.loc.gov/item/90715980/
-https://www.loc.gov/item/90715981/
-https://www.loc.gov/item/90716009/
-https://www.loc.gov/item/90716011/
-https://www.loc.gov/item/90716012/
-https://www.loc.gov/item/92519204/
-https://www.loc.gov/item/93500718/
-https://www.loc.gov/item/93500720/
-https://www.loc.gov/item/93504429/
-https://www.loc.gov/item/93510427/
-https://www.loc.gov/item/93510496/
-https://www.loc.gov/item/93511486/
-https://www.loc.gov/item/94513615/
-https://www.loc.gov/item/94513619/
-https://www.loc.gov/item/94514736/
-https://www.loc.gov/item/96505328/
-https://www.loc.gov/item/96505331/
-https://www.loc.gov/item/96505333/
-https://www.loc.gov/item/96505338/
-https://www.loc.gov/item/96511984/
-https://www.loc.gov/item/96512992/
-https://www.loc.gov/item/96512994/
-https://www.loc.gov/item/98507609/
-https://www.loc.gov/item/98508477/
-https://www.loc.gov/item/98508490/
-https://www.loc.gov/item/98508503/
-https://www.loc.gov/item/98508509/
-https://www.loc.gov/item/98508512/
-https://www.loc.gov/item/98508514/
-https://www.loc.gov/item/98508515/
-https://www.loc.gov/item/98508522/
-https://www.loc.gov/item/98508572/
-https://www.loc.gov/item/98508574/
-https://www.loc.gov/item/98508577/
-https://www.loc.gov/item/98508578/
-https://www.loc.gov/item/98508581/
-https://www.loc.gov/item/98508588/
-https://www.loc.gov/item/98508605/
-https://www.loc.gov/item/98508610/
-https://www.loc.gov/item/98508631/
-https://www.loc.gov/item/98508658/
-https://www.loc.gov/item/98508851/
-https://www.loc.gov/item/98509689/
-https://www.loc.gov/item/98509691/
-https://www.loc.gov/item/98509722/
-https://www.loc.gov/item/98515951/
-https://www.loc.gov/item/98515954/
-https://www.loc.gov/item/98515962/
-
-
-
-
-"""
-
 
 if __name__ == "__main__":
     main()
