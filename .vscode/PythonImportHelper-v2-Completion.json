@@ -119,6 +119,15 @@
         "documentation": {}
     },
     {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": "scripts.01_getimages_google_imagesearch",
@@ -240,7 +249,7 @@
         "kind": 2,
         "importPath": "scripts.filename_cleaner",
         "description": "scripts.filename_cleaner",
-        "peekOfCode": "def clean_photo_names(folder, filenames_dict):\n    # get the list of files in the folder\n    files = os.listdir(folder)\n    # loop through the files\n    for file in files:\n        # remove \" from the file name\n        # lowercase the file name\n        # replace spaces with underscores\n        # replace dashes with underscores\n        # replace commas with underscores",
+        "peekOfCode": "def clean_photo_names(folder, filenames_dict):\n    # get the list of files in the folder\n    try:\n        files = os.listdir(folder)\n        # loop through the files\n        for file in files:\n            if file == '.DS_Store':\n                continue\n            original_name = file\n            # remove \" from the file name",
         "detail": "scripts.filename_cleaner",
         "documentation": {}
     },
@@ -249,7 +258,7 @@
         "kind": 2,
         "importPath": "scripts.filename_cleaner",
         "description": "scripts.filename_cleaner",
-        "peekOfCode": "def main():\n    print(f'Running {__file__}')\n    # run the clean_photo_names function\n    filenames_dict = {} # store original names in a csv file\n    for folder in os.listdir(\"../data/images\"):\n        clean_photo_names(\"../data/images/\" + folder, filenames_dict)\nif __name__ == \"__main__\":\n    main()",
+        "peekOfCode": "def main():\n    print(f'Running {__file__}')\n    # run the clean_photo_names function\n    filenames_dict = {} # store original names in a csv file\n    for folder in os.listdir(\"./images\"):\n        clean_photo_names(\"./images/\" + folder, filenames_dict)\nif __name__ == \"__main__\":\n    main()",
         "detail": "scripts.filename_cleaner",
         "documentation": {}
     }
