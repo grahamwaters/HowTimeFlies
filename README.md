@@ -1,5 +1,7 @@
 # HowItsChanged
-Using requests and google images to illustrate how a query has visually changed over the years.
+Using requests and google images to show how a query visually changes given a time parameter when searching google images.
+
+
 
 ## How to use
 1. Clone the repo
@@ -8,4 +10,4 @@ Using requests and google images to illustrate how a query has visually changed 
 
 ## How it works
 1. The user inputs a query
-2. The program uses the requests library to get the html of the google images page
+2. The program uses the `requests` library to get the html of the google images page, and uses `BeautifulSoup` to parse the html.

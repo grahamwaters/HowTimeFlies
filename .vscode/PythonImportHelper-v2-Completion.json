@@ -85,6 +85,23 @@
         "documentation": {}
     },
     {
+        "label": "google_images_download",
+        "importPath": "google_images_download",
+        "description": "google_images_download",
+        "isExtraImport": true,
+        "detail": "google_images_download",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
         "label": "icecream",
         "kind": 6,
         "isExtraImport": true,
@@ -99,23 +116,6 @@
         "description": "icecream",
         "isExtraImport": true,
         "detail": "icecream",
-        "documentation": {}
-    },
-    {
-        "label": "shutil",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "shutil",
-        "description": "shutil",
-        "detail": "shutil",
-        "documentation": {}
-    },
-    {
-        "label": "google_images_download",
-        "importPath": "google_images_download",
-        "description": "google_images_download",
-        "isExtraImport": true,
-        "detail": "google_images_download",
         "documentation": {}
     },
     {
@@ -173,66 +173,66 @@
         "documentation": {}
     },
     {
-        "label": "folder_create",
-        "kind": 2,
-        "importPath": "beta_testing",
-        "description": "beta_testing",
-        "peekOfCode": "def folder_create(images, folder_name):\n    try:\n        folder_name = str(folder_name)\n        # folder creation\n        try:\n            os.mkdir(folder_name)\n        except Exception as e:  # if there are problems then save with a 2 on it.\n            os.mkdir(folder_name + \"2\")\n    # if folder exists with that name, ask another name\n    except:",
-        "detail": "beta_testing",
-        "documentation": {}
-    },
-    {
-        "label": "download_images",
-        "kind": 2,
-        "importPath": "beta_testing",
-        "description": "beta_testing",
-        "peekOfCode": "def download_images(images):\n    # initial count is zero\n    count = 0\n    # print total images found in URL\n    print(f\"Total {len(images)} Image Found!\")\n    # checking if images is not zero\n    if len(images) != 0:\n        for i, image in enumerate(images):\n            # From image tag ,Fetch image Source URL\n            # 1.data-srcset",
-        "detail": "beta_testing",
-        "documentation": {}
-    },
-    {
-        "label": "main",
-        "kind": 2,
-        "importPath": "beta_testing",
-        "description": "beta_testing",
-        "peekOfCode": "def main():\n    # go to the link and we will iterate multiple times with this same url...\n    pages_total = 644664 // 36\n    for page_num in tqdm(range(1, pages_total)):\n        url = f\"https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=&page={page_num}\"\n        ic(url)\n        # content of URL\n        r = requests.get(url)\n        # Parse HTML Code\n        soup = BeautifulSoup(r.text, \"html.parser\")",
-        "detail": "beta_testing",
-        "documentation": {}
-    },
-    {
-        "label": "get_pictures",
-        "kind": 2,
-        "importPath": "get_generic_images",
-        "description": "get_generic_images",
-        "peekOfCode": "def get_pictures(url, filename):\n    ## Set up the image URL and filename\n    image_url = (\n        \"https://cdn.pixabay.com/photo/2020/02/06/09/39/summer-4823612_960_720.jpg\"\n    )\n    filename = image_url.split(\"/\")[-1]\n    # Open the url image, set stream to True, this will return the stream content.\n    r = requests.get(image_url, stream=True)\n    # Check if the image was retrieved successfully\n    if r.status_code == 200:",
-        "detail": "get_generic_images",
-        "documentation": {}
-    },
-    {
         "label": "downloadimages",
         "kind": 2,
-        "importPath": "get_google",
-        "description": "get_google",
+        "importPath": "scripts.04_get_google",
+        "description": "scripts.04_get_google",
         "peekOfCode": "def downloadimages(query):\n    # keywords is the search query\n    # format is the image file format\n    # limit is the number of images to be downloaded\n    # print urs is to print the image file url\n    # size is the image size which can\n    # be specified manually (\"large, medium, icon\")\n    # aspect ratio denotes the height width ratio\n    # of images to download. (\"tall, square, wide, panoramic\")\n    arguments = {",
-        "detail": "get_google",
+        "detail": "scripts.04_get_google",
         "documentation": {}
     },
     {
         "label": "response",
         "kind": 5,
-        "importPath": "get_google",
-        "description": "get_google",
+        "importPath": "scripts.04_get_google",
+        "description": "scripts.04_get_google",
         "peekOfCode": "response = google_images_download.googleimagesdownload()\nsearch_queries = [\n    \"The smartphone also features an in display fingerprint sensor.\",\n    \"The pop up selfie camera is placed aligning with the rear cameras.\",\n    \"\"\"In terms of storage Vivo V15 Pro could offer\n   up to 6GB of RAM and 128GB of onboard storage.\"\"\",\n    \"The smartphone could be fuelled by a 3 700mAh battery.\",\n]\ndef downloadimages(query):\n    # keywords is the search query",
-        "detail": "get_google",
+        "detail": "scripts.04_get_google",
         "documentation": {}
     },
     {
         "label": "search_queries",
         "kind": 5,
-        "importPath": "get_google",
-        "description": "get_google",
+        "importPath": "scripts.04_get_google",
+        "description": "scripts.04_get_google",
         "peekOfCode": "search_queries = [\n    \"The smartphone also features an in display fingerprint sensor.\",\n    \"The pop up selfie camera is placed aligning with the rear cameras.\",\n    \"\"\"In terms of storage Vivo V15 Pro could offer\n   up to 6GB of RAM and 128GB of onboard storage.\"\"\",\n    \"The smartphone could be fuelled by a 3 700mAh battery.\",\n]\ndef downloadimages(query):\n    # keywords is the search query\n    # format is the image file format",
-        "detail": "get_google",
+        "detail": "scripts.04_get_google",
+        "documentation": {}
+    },
+    {
+        "label": "get_pictures",
+        "kind": 2,
+        "importPath": "scripts.05_get_generic_images",
+        "description": "scripts.05_get_generic_images",
+        "peekOfCode": "def get_pictures(url, filename):\n    ## Set up the image URL and filename\n    image_url = (\n        \"https://cdn.pixabay.com/photo/2020/02/06/09/39/summer-4823612_960_720.jpg\"\n    )\n    filename = image_url.split(\"/\")[-1]\n    # Open the url image, set stream to True, this will return the stream content.\n    r = requests.get(image_url, stream=True)\n    # Check if the image was retrieved successfully\n    if r.status_code == 200:",
+        "detail": "scripts.05_get_generic_images",
+        "documentation": {}
+    },
+    {
+        "label": "folder_create",
+        "kind": 2,
+        "importPath": "scripts.06_beta_testing",
+        "description": "scripts.06_beta_testing",
+        "peekOfCode": "def folder_create(images, folder_name):\n    try:\n        folder_name = str(folder_name)\n        # folder creation\n        try:\n            os.mkdir(folder_name)\n        except Exception as e:  # if there are problems then save with a 2 on it.\n            os.mkdir(folder_name + \"2\")\n    # if folder exists with that name, ask another name\n    except:",
+        "detail": "scripts.06_beta_testing",
+        "documentation": {}
+    },
+    {
+        "label": "download_images",
+        "kind": 2,
+        "importPath": "scripts.06_beta_testing",
+        "description": "scripts.06_beta_testing",
+        "peekOfCode": "def download_images(images):\n    # initial count is zero\n    count = 0\n    # print total images found in URL\n    print(f\"Total {len(images)} Image Found!\")\n    # checking if images is not zero\n    if len(images) != 0:\n        for i, image in enumerate(images):\n            # From image tag ,Fetch image Source URL\n            # 1.data-srcset",
+        "detail": "scripts.06_beta_testing",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.06_beta_testing",
+        "description": "scripts.06_beta_testing",
+        "peekOfCode": "def main():\n    # go to the link and we will iterate multiple times with this same url...\n    pages_total = 644664 // 36\n    for page_num in tqdm(range(1, pages_total)):\n        url = f\"https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=&page={page_num}\"\n        ic(url)\n        # content of URL\n        r = requests.get(url)\n        # Parse HTML Code\n        soup = BeautifulSoup(r.text, \"html.parser\")",
+        "detail": "scripts.06_beta_testing",
         "documentation": {}
     }
 ]
