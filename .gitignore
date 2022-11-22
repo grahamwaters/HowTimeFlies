@@ -1,2 +1,7 @@
 .hazellock
 .vscode
+wiki_images_resources/constants.ts
+wiki_images_resources/index.ts
+wiki_images_resources/wiki_images.scss
+wiki_images_resources/Wiki_imagesContainer.tsx
+wiki_images_resources/Wiki_imagesView.tsx
