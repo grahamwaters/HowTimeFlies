@@ -1,13 +1,21 @@
-# HowTimeFlies
+<div align = 'center'>
 
-![1](images/readme_images/"New York City "in the year 1800"" photograph " history -logo -product1.jpg)
+# The How Time Flies Project
 
-Using requests and google images to show how a query visually changes given a time parameter when searching google images.
+<strong> A curious examination of the visual past with the computational tools of the present </strong>
+
+![1](images/1800/new_york_city_in_the_year_1800.jpg)
+
+
 
 **Version 1.0.0**
 
 **Created by Graham Waters**
-<div align='center'>
+
+
+
+
+
 <!-- add badges for the issues, release, latest updates, and stars/forks -->
 
 [![GitHub issues](https://img.shields.io/github/issues/grahamwaters/HowTimeFlies)](https://img.shields.io/github/issues/grahamwaters/HowTimeFlies)
@@ -19,6 +27,17 @@ Using requests and google images to show how a query visually changes given a ti
 ![ViewCount](https://views.whatilearened.today/views/github/grahamwaters/HowTimeFlies.svg)
 
 </div>
+
+## Table of Contents
+- [The How Time Flies Project](#the-how-time-flies-project)
+  - [Table of Contents](#table-of-contents)
+- [What is this?](#what-is-this)
+  - [How to use](#how-to-use)
+  - [Process](#process)
+  - [How it works](#how-it-works)
+
+# What is this?
+This project is a collection of images of the same place at different times. The images are taken from google images and currently are not filtered for their historical accuracy or quality. In further implementations this will be remedied. It uses `requests` and `google images` to show how a query visually changes given a time parameter when searching google images.
 
 ## How to use
 1. Clone the repo
