@@ -234,5 +234,23 @@
         "peekOfCode": "def main():\n    # go to the link and we will iterate multiple times with this same url...\n    pages_total = 644664 // 36\n    for page_num in tqdm(range(1, pages_total)):\n        url = f\"https://www.albumartexchange.com/covers?q=&fltr=ALL&sort=SCORE&status=RDY&size=any&apply-filter=&page={page_num}\"\n        ic(url)\n        # content of URL\n        r = requests.get(url)\n        # Parse HTML Code\n        soup = BeautifulSoup(r.text, \"html.parser\")",
         "detail": "scripts.06_beta_testing",
         "documentation": {}
+    },
+    {
+        "label": "clean_photo_names",
+        "kind": 2,
+        "importPath": "scripts.filename_cleaner",
+        "description": "scripts.filename_cleaner",
+        "peekOfCode": "def clean_photo_names(folder, filenames_dict):\n    # get the list of files in the folder\n    files = os.listdir(folder)\n    # loop through the files\n    for file in files:\n        # remove \" from the file name\n        # lowercase the file name\n        # replace spaces with underscores\n        # replace dashes with underscores\n        # replace commas with underscores",
+        "detail": "scripts.filename_cleaner",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.filename_cleaner",
+        "description": "scripts.filename_cleaner",
+        "peekOfCode": "def main():\n    print(f'Running {__file__}')\n    # run the clean_photo_names function\n    filenames_dict = {} # store original names in a csv file\n    for folder in os.listdir(\"../data/images\"):\n        clean_photo_names(\"../data/images/\" + folder, filenames_dict)\nif __name__ == \"__main__\":\n    main()",
+        "detail": "scripts.filename_cleaner",
+        "documentation": {}
     }
 ]
