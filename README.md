@@ -4,7 +4,7 @@
 
 <strong> A curious examination of the visual past with the computational tools of the present </strong>
 
-![1](images/1800/new_york_city_in_the_year_1800.jpg)
+![1](supporting_files/new_york_city_in_the_year_1800.jpg)
 
 
 
