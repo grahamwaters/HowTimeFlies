@@ -1,7 +1,24 @@
-# HowItsChanged
+# HowTimeFlies
+
+
+
 Using requests and google images to show how a query visually changes given a time parameter when searching google images.
 
+**Version 1.0.0**
 
+**Created by Graham Waters**
+<div align='center'>
+<!-- add badges for the issues, release, latest updates, and stars/forks -->
+
+[![GitHub issues](https://img.shields.io/github/issues/grahamwaters/HowTimeFlies)](https://img.shields.io/github/issues/grahamwaters/HowTimeFlies)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/grahamwaters/HowTimeFlies)](https://img.shields.io/github/v/release/grahamwaters/HowTimeFlies)
+[![GitHub last commit](https://img.shields.io/github/last-commit/grahamwaters/HowTimeFlies)](https://img.shields.io/github/last-commit/grahamwaters/HowTimeFlies)
+[![GitHub stars](https://img.shields.io/github/stars/grahamwaters/HowTimeFlies)](https://img.shields.io/github/stars/grahamwaters/HowTimeFlies)
+[![GitHub forks](https://img.shields.io/github/forks/grahamwaters/HowTimeFlies)](https://img.shields.io/github/forks/grahamwaters/HowTimeFlies)
+<!-- add view count to the repo -->
+![ViewCount](https://views.whatilearened.today/views/github/grahamwaters/HowTimeFlies.svg)
+
+</div>
 
 ## How to use
 1. Clone the repo
