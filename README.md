@@ -39,13 +39,15 @@
 # What is this?
 This project is a collection of images of the same place at different times. The images are taken from google images and currently are not filtered for their historical accuracy or quality. In further implementations this will be remedied. It uses `requests` and `google images` to show how a query visually changes given a time parameter when searching google images.
 
-## How to use
-1. Clone the repo
-2. Install the requirements
-3. Run `python3 howitschanged.py`
+# Contributing
+
+We welcome all contributions to this project as it is an evolving tool. as we move towards releasing our first release we are looking to maintain black formatting and abide by flake8 as well. to contribute please fork this repository and clone it to your machine so that you can make your changes and then submit a pull request for us to review.
+
+if you have any great ideas about how this project could be changed feel free to submit them as an issue.   
 
 
-## Process
+
+## The Process
 
 The program prompts the user to give several inputs:
 
@@ -75,11 +77,9 @@ Running total of collected images:40
  52%|████████▋       | 31/60 [01:09<00:04,  1.05it/s]
 ```
 
-
-
-
-
-
-## How it works
-1. The user inputs a query
-2. The program uses the `requests` library to get the html of the google images page, and uses `BeautifulSoup` to parse the html.
+## How to use it
+1. Clone the repo
+2. Install the requirements
+3. Run `python3 howitschanged.py`
+4. The user inputs a query
+5. The program uses the `requests` library to get the html of the google images page, and uses `BeautifulSoup` to parse the html.
